@@ -1,0 +1,69 @@
+.white-bg {
+    -fx-background-color: #fff;
+}
+
+.btnlogin {
+    -fx-background-color: linear-gradient(to bottom right, deepskyblue, #3753ce);
+    -fx-cursor: pointer;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-family: Poppins;
+}
+.btnlogin:hover {
+    -fx-background-color: linear-gradient(to bottom right, deepskyblue, #3753ce);
+}
+
+.textfield {
+    -fx-border-width: .5px;
+}
+.textfield:focused {
+    -fx-border-color: linear-gradient(to bottom right, deepskyblue, #3753ce);
+    -fx-border-width: .8px;
+}
+
+.anchor-bg {
+    -fx-background-color: linear-gradient(to bottom right, deepskyblue, #3c53b9);
+}
+
+.btnPeminjam {
+    -fx-background-color: linear-gradient(to bottom right, #2ecc71, #1abc9c);
+    -fx-cursor: pointer;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-family: Poppins;
+}
+.btnPeminjam:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2ecc71, #1abc9c);
+}
+
+.btngender {
+    -fx-background-color: #fff;
+    -fx-border-color: rgba(82, 82, 82, 0.432);
+    -fx-cursor: pointer;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-family: Poppins;
+}
+.btngender:hover {
+    -fx-background-color: #dfdfdf;
+}
+
+.text-area {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+}
+
+.choice-box-card {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px 10px 10px 10px; /* Radius sudut background */
+    -fx-border-color: #c1c1c1;
+    -fx-border-radius: 5px 5px 5px 5px; /* Radius sudut border */
+}
+
+.admin-login-text {
+    -fx-underline: true;
+}

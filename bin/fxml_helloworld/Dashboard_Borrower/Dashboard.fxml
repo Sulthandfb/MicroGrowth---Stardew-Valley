@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" stylesheets="@../../default_package/investor.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_helloworld.Dashboard_Borrower.BorrowerController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane fx:id="borrowerSideBar" layoutX="319.0" layoutY="63.0" prefHeight="832.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="sidebar-borrower" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Photo_element/waw.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label styleClass="microgrowth-text" text="MicroGrowth" />
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" layoutY="114.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="133.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Photo_element/profile.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label styleClass="microgrowth-text" text="Sulthan Raihan" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutY="357.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="homePage" mnemonicParsing="false" onAction="#keHomePage" prefHeight="42.0" prefWidth="200.0" styleClass="nav-btn" text="Home">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Photo_element/home.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="submissionPage" mnemonicParsing="false" onAction="#keSubmissionPage" prefHeight="42.0" prefWidth="200.0" styleClass="nav-btn" text="Submission">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Photo_element/compliant.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="paymentPage" mnemonicParsing="false" onAction="#kePaymentPage" prefHeight="42.0" prefWidth="200.0" styleClass="nav-btn" text="Make Payment">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Photo_element/economic-crisis.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <HBox alignment="TOP_CENTER" layoutY="732.0" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="borrowerLogoutButton" mnemonicParsing="false" onAction="#logoutButton" prefHeight="54.0" prefWidth="192.0" styleClass="nav-btn" text="Log Out">
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Photo_element/logout.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <ScrollPane prefHeight="737.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1600.0" prefWidth="1062.0" styleClass="bg-anchor" stylesheets="@../../default_package/investor.css">
+                           <children>
+                              <ImageView fitHeight="180.0" fitWidth="1062.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Photo_element/MicroGrowth%20slogan.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="287.0" fitWidth="247.0" layoutX="793.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Photo_element/Screenshot%202024-06-23%20213532.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox layoutX="38.0" layoutY="196.0" prefHeight="149.0" prefWidth="769.0">
+                                 <children>
+                                    <Label styleClass="welcome-text-borrower" text="Selamat Datang di MicroGrowth," />
+                                    <Label styleClass="welcome-text-borrower" text="Solusi Terbaik untuk Pendanaan Bisnis Anda">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label prefHeight="17.0" prefWidth="742.0" text="Apakah Anda seorang pebisnis yang sedang mencari modal tambahan untuk mengembangkan usaha? MicroGrowth hadir untuk membantu">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label prefHeight="17.0" prefWidth="742.0" text="Anda mewujudkan impian tersebut. Dengan platform kami yang inovatif, Anda dapat dengan mudah mengajukan pinjaman dan">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label prefHeight="17.0" prefWidth="742.0" text="mendapatkan dukungan finansial yang Anda butuhkan.">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="203.0" fitWidth="181.0" layoutX="38.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Photo_element/Screenshot%202024-06-23%20214522.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox layoutX="266.0" layoutY="405.0" prefHeight="200.0" prefWidth="499.0">
+                                 <children>
+                                    <Label styleClass="welcome-text-borrower" text="Apa itu MicroGrowth?">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="MicroGrowth adalah platform pendanaan mikro yang dirancang khusus untuk mendukung">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="usaha kecil dan menengah (UKM). Kami menyediakan solusi pembiayaan cepat, mudah,">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="dan transparan, sehingga Anda dapat fokus pada pertumbuhan bisnis Anda tanpa khawatir ">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="tentang masalah pendanaan. MicroGrowth dibuat pada bulan Juni 2024, dibuat oleh sebuah">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="kelompok dengan bermodalkan ilmu yang didapatkan dari Bapak Moh. Idris dan ">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Bapak R. Teduh Dirgahayu selaku dosen FPA dan RPL kami Tim Stardew Valley">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Label layoutX="274.0" layoutY="647.0" styleClass="welcome-text-borrower" text="Berikut adalah tiga alasan utama mengapa pebisnis" />
+                              <Label layoutX="253.0" layoutY="677.0" styleClass="welcome-text-borrower" text="seperti Anda dapat mengajukan modal di MicroGrowth:" />
+                              <HBox alignment="CENTER" layoutX="60.0" layoutY="746.0" prefHeight="205.0" prefWidth="911.0">
+                                 <children>
+                                    <Pane prefHeight="205.0" prefWidth="250.0" styleClass="bg-anchor">
+                                       <HBox.margin>
+                                          <Insets left="50.0" right="50.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <ImageView fitHeight="79.0" fitWidth="79.0" layoutX="66.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Photo_element/Screenshot%202024-06-23%20215836.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="51.0" layoutY="103.0" text="Proses Pengajuan">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="50.0" layoutY="120.0" text="Mudah dan Cepat">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="35.0" layoutY="144.0" text="proses pengajuan pinjaman">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="21.0" layoutY="160.0" text="dirancang agar cepat dan efisien.">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="250.0" styleClass="bg-anchor">
+                                       <HBox.margin>
+                                          <Insets left="50.0" right="50.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <ImageView fitHeight="88.0" fitWidth="80.0" layoutX="62.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Photo_element/Screenshot%202024-06-23%20220313.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="54.0" layoutY="103.0" text="Bunga dan Tenor">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="78.0" layoutY="120.0" text="Fleksibel">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="22.0" layoutY="145.0" text="pilihan bunga dan tenor dapat di">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="16.0" layoutY="161.0" text="sesuaikan dengan kebutuhan bisnis">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="250.0" styleClass="bg-anchor">
+                                       <HBox.margin>
+                                          <Insets left="50.0" right="50.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <ImageView fitHeight="85.0" fitWidth="103.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Photo_element/Screenshot%202024-06-23%20220537.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="73.0" layoutY="103.0" text="Dukungan">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="42.0" layoutY="120.0" text="Pendampingan Bisnis">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="29.0" layoutY="147.0" text="dukungan dan pendampingan">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="14.0" layoutY="163.0" text="untuk memastikan kesuksesan bisnis">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </HBox>
+                              <VBox layoutX="42.0" layoutY="993.0" prefHeight="200.0" prefWidth="978.0">
+                                 <children>
+                                    <Label styleClass="welcome-text-borrower" text="Bagaimana Cara Mengajukan Pinjaman di MicroGrowth?">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label styleClass="microgrowth-text" text="Mengajukan pinjaman di MicroGrowth sangatlah mudah. Berikut adalah langkah-langkah yang perlu Anda lakukan:">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label styleClass="wallet-text" text="1. Daftar dan Buat Akun">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Kunjungi situs web MicroGrowth dan daftar untuk membuat akun. Isi informasi dasar tentang bisnis Anda.">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label styleClass="wallet-text" text="2. Lengkapi Profil Bisnis">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Isi formulir pengajuan pinjaman dengan detail lengkap tentang bisnis Anda, termasuk informasi keuangan ">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="dan rencana penggunaan dana.">
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label styleClass="wallet-text" text="3. Unggah Dokumen yang Diperlukan">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Unggah dokumen seperti KTP, NPWP, dan laporan keuangan untuk memproses pengajuan Anda.">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label styleClass="wallet-text" text="4. Tunggu Persetujuan">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="Tim kami akan meninjau pengajuan Anda dan menghubungi Anda untuk langkah selanjutnya. Jika disetujui, ">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label text="dana akan segera ditransfer ke rekening Anda.">
+                                       <VBox.margin>
+                                          <Insets left="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="293.0" fitWidth="1062.0" layoutY="1329.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Photo_element/Gradient.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="301.0" layoutY="1425.0" styleClass="wallet-text" text="Mulailah Pertumbuhan Bisnis Anda dengan MicroGrowth" />
+                              <Label layoutX="198.0" layoutY="1456.0" text="Jangan biarkan kekurangan modal menghambat perkembangan bisnis Anda. Ajukan pinjaman sekarang di MicroGrowth" />
+                              <Label layoutX="120.0" layoutY="1473.0" text="dan rasakan kemudahan serta keuntungan dari platform pendanaan mikro terbaik. Kami siap membantu Anda mencapai kesuksesan yang lebih besar." />
+                              <Label layoutX="469.0" layoutY="1553.0" text="PT.Stardew Valley" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

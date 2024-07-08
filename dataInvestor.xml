@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<fxml__helloworld.Login__Scene.RegisterData>
+    <name>Nawa</name>
+    <email>nawa123@gmaill.com</email>
+    <password>123</password>
+    <phoneNumber>089626781545</phoneNumber>
+    <typeRegister>Investor</typeRegister>
+</fxml__helloworld.Login__Scene.RegisterData>

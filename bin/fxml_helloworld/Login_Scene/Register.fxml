@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_helloworld.Login_Scene.RegisterInvestor">
+   <children>
+      <AnchorPane prefHeight="832.0" prefWidth="1280.0" styleClass="white-bg" stylesheets="@../../default_package/style.css">
+         <children>
+            <AnchorPane prefHeight="832.0" prefWidth="617.0" styleClass="white-bg" stylesheets="@../../default_package/style.css">
+               <children>
+                  <Label layoutX="111.0" layoutY="112.0" text="Registration">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="111.0" layoutY="163.0" text="Fill in all the information without leaving any blanks." textFill="#7c7c7c">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="TOP_CENTER" layoutX="111.0" layoutY="237.0" prefHeight="544.0" prefWidth="396.0">
+                     <children>
+                        <TextField fx:id="nameRegister" prefHeight="44.0" prefWidth="346.0" promptText="Full Name" styleClass="textfield" stylesheets="@../../default_package/style.css">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="emailRegister" prefHeight="44.0" prefWidth="319.0" promptText="Email" styleClass="textfield" stylesheets="@../../default_package/style.css">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="phoneRegister" prefHeight="44.0" prefWidth="319.0" promptText="PhoneNumber" styleClass="textfield" stylesheets="@../../default_package/style.css">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <PasswordField fx:id="passwordRegister" prefHeight="44.0" prefWidth="319.0" promptText="New Passwrod" styleClass="textfield" stylesheets="@../../default_package/style.css">
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                        <Label text="Register As">
+                           <VBox.margin>
+                              <Insets bottom="10.0" right="170.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="typeUser" prefHeight="46.0" prefWidth="232.0" styleClass="choice-box-card">
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </ChoiceBox>
+                        <Button fx:id="signupButton" mnemonicParsing="false" onAction="#signUp" prefHeight="54.0" prefWidth="319.0" styleClass="btnPeminjam" stylesheets="@../../default_package/style.css" text="Sign Up">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="615.0" prefHeight="832.0" prefWidth="665.0" styleClass="anchor-bg">
+               <children>
+                  <ImageView fitHeight="399.0" fitWidth="392.0" layoutX="137.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Photo_element/Untitled%20design%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <HBox layoutX="201.0" layoutY="416.0" prefHeight="46.0" prefWidth="297.0" />
+                  <HBox alignment="CENTER" layoutX="201.0" layoutY="436.0" prefHeight="53.0" prefWidth="297.0">
+                     <children>
+                        <Label text="Your " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="smart choice">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.32407405972480774" green="0.9324073791503906" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <Label text="for business funding" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Text fill="WHITE" layoutX="216.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create your account now and start funding with us" />
+                  <VBox alignment="CENTER" layoutX="187.0" layoutY="728.0" prefHeight="90.0" prefWidth="297.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="297.0">
+                           <children>
+                              <ImageView fitHeight="53.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Photo_element/waw.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="MicroGrowth" textFill="WHITE">
+                                 <font>
+                                    <Font name="Dubai Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label text="Made by Stardew Valley" textFill="#e1e1e1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="13.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1080.0" styleClass="bg-portfolio" stylesheets="@../../default_package/investor.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_helloworld.Dashboard_Investor.PortfolioController">
+   <children>
+      <Pane layoutX="17.0" layoutY="306.0" prefHeight="506.0" prefWidth="602.0" styleClass="bg-port">
+         <children>
+            <TableView fx:id="myFundingTableView" layoutX="15.0" layoutY="104.0" prefHeight="388.0" prefWidth="572.0">
+              <columns>
+                <TableColumn fx:id="borrorwerNameColumn" prefWidth="194.0" text="Borrower Name" />
+                <TableColumn fx:id="remainingColumn" prefWidth="181.0" text="Remaining Loan" />
+                  <TableColumn fx:id="profitShareColumn" prefWidth="196.0" text="Profit Share" />
+              </columns>
+            </TableView>
+            <TextField fx:id="searchBar" layoutX="353.0" layoutY="21.0" prefHeight="37.0" prefWidth="234.0" promptText="Search" styleClass="textfield" />
+            <ImageView fitHeight="19.0" fitWidth="20.0" layoutX="559.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Photo_element/search.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="24.0" layoutY="21.0" text="My Funding">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="633.0" layoutY="306.0" prefHeight="506.0" prefWidth="433.0" styleClass="bg-port">
+         <children>
+            <PieChart fx:id="pieChart" layoutX="5.0" layoutY="37.0" prefHeight="459.0" prefWidth="422.0" />
+            <Label layoutX="172.0" layoutY="14.0" text="Overall funding">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="17.0" layoutY="14.0" prefHeight="278.0" prefWidth="1046.0" styleClass="bg-port">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Transaction History">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TableView fx:id="historyTable" layoutX="35.0" layoutY="48.0" prefHeight="216.0" prefWidth="977.0">
+              <columns>
+                <TableColumn fx:id="recipientColumn" prefWidth="248.0" text="Recipient Name" />
+                <TableColumn fx:id="amountColumn" prefWidth="232.0" text="Amount" />
+                  <TableColumn fx:id="accountColumn" prefWidth="252.0" text="Recipient Account" />
+                  <TableColumn fx:id="dateColumn" prefWidth="244.0" text="Date Transaction" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1080.0" styleClass="pane" stylesheets="@../../default_package/investor.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_helloworld.Dashboard_Borrower.MakePayment">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="801.0" prefWidth="631.0" styleClass="bg-anchor">
+         <children>
+            <Label layoutX="28.0" layoutY="23.0" styleClass="wallet-text" text="Make Payment Profit Share">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="61.0" prefHeight="21.0" prefWidth="109.0" text="Your Loan Plan :">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="loanPlanFund" layoutX="137.0" layoutY="61.0" prefHeight="21.0" prefWidth="109.0" text="Rp. ">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ScrollPane layoutX="28.0" layoutY="127.0" prefHeight="449.0" prefWidth="580.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="690.0">
+                     <children>
+                        <TableView fx:id="paymentTableView" prefHeight="435.0" prefWidth="693.0">
+                          <columns>
+                            <TableColumn fx:id="investorNameColumn" prefWidth="125.0" text="Investor Name" />
+                            <TableColumn fx:id="emailInvestorColumn" prefWidth="136.0" text="Email" />
+                              <TableColumn fx:id="accountInvestorColumn" prefWidth="150.0" text="Account Number" />
+                              <TableColumn fx:id="amountColumn" prefWidth="139.0" text="Amount" />
+                              <TableColumn fx:id="fundDateColumn" prefWidth="139.0" text="Fund Date" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Button fx:id="payLoan" layoutX="361.0" layoutY="711.0" mnemonicParsing="false" onAction="#handlePayLoan" prefHeight="45.0" prefWidth="165.0" styleClass="add-button" text="Pay Loan" />
+            <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="636.0" prefHeight="67.0" prefWidth="290.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="107.0" text="Investor Name : " />
+                  <TextField fx:id="investorNameField" prefHeight="30.0" prefWidth="166.0" styleClass="textfield" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="700.0" prefHeight="67.0" prefWidth="290.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="107.0" text="Account Number : " />
+                  <TextField fx:id="AccountField" prefHeight="30.0" prefWidth="166.0" styleClass="textfield" />
+               </children>
+            </HBox>
+            <Label layoutX="28.0" layoutY="606.0" text="Enter the name and account number of the borrower you want to pay" />
+            <Label layoutX="28.0" layoutY="92.0" prefHeight="21.0" prefWidth="153.0" text="Remaining Loan Amount  :">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="remainingLoanLabel" layoutX="192.0" layoutY="92.0" prefHeight="21.0" prefWidth="109.0" text="Rp. ">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="659.0" layoutY="16.0" prefHeight="801.0" prefWidth="407.0" styleClass="bg-anchor">
+         <children>
+            <Label layoutX="37.0" layoutY="44.0" styleClass="wallet-text" text="Incoming funds" />
+            <Pane layoutX="37.0" layoutY="84.0" prefHeight="136.0" prefWidth="253.0" styleClass="pane-performance">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="22.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Photo_element/creditor.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="incomeFundsLabel" layoutX="22.0" layoutY="79.0" prefHeight="30.0" prefWidth="206.0" text="Rp. 0.0-" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox layoutX="51.0" layoutY="255.0" prefHeight="288.0" prefWidth="345.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="365.0" styleClass="wallet-text" text="About You" />
+                  <Label text="This is brief information about you">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="345.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="115.0" text="Name                 :" />
+                        <Label fx:id="nameBorrowerLabel" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="345.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="Email                  :" />
+                        <Label fx:id="emailBorrowerLabel" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="345.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="115.0" text="NPWP               : " />
+                        <Label fx:id="npwpBorrowerLabel" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="345.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="Account Number :" />
+                        <Label fx:id="accountBorrowerLabel" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

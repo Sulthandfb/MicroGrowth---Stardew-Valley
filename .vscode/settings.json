@@ -1,0 +1,13 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\TUF\\Downloads\\xstream-1.4.20.jar"
+        ],
+        "exclude": [
+            "lib/xstream-1.4.20.jar"
+        ]
+    }
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1080.0" stylesheets="@../../default_package/investor.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_helloworld.Dashboard_Investor.FundingController">
+   <children>
+      <AnchorPane layoutX="371.0" layoutY="23.0" prefHeight="792.0" prefWidth="695.0" styleClass="bg-anchor">
+         <children>
+            <ScrollPane hvalue="1.0" layoutX="17.0" layoutY="97.0" prefHeight="675.0" prefWidth="666.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="659.0" prefWidth="1068.0">
+                     <children>
+                        <TableView fx:id="fundingTable" prefHeight="659.0" prefWidth="1069.0">
+                          <columns>
+                            <TableColumn fx:id="nameFundColumn" prefWidth="147.0" text="Full Name" />
+                            <TableColumn fx:id="typeFundColumn" prefWidth="114.0" text="Business Type" />
+                              <TableColumn fx:id="amountFundColumn" prefWidth="127.0" text="Installment Amount" />
+                              <TableColumn fx:id="profitFundColumn" prefWidth="138.0" text="Profit Share" />
+                              <TableColumn fx:id="installmentFundColumn" prefWidth="139.0" text="Installment Type" />
+                              <TableColumn fx:id="scoreFundColumn" prefWidth="111.0" text="Score Credit" />
+                              <TableColumn fx:id="accountFundColumn" prefWidth="163.0" text="Account Number" />
+                              <TableColumn fx:id="paymentStatusColumn" prefWidth="129.0" text="Payment Status" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <TextField fx:id="searchBar" layoutX="15.0" layoutY="28.0" prefHeight="34.0" prefWidth="313.0" promptText="Search" styleClass="textfield" />
+            <ImageView fitHeight="17.0" fitWidth="24.0" layoutX="302.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Photo_element/search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="23.0" prefHeight="792.0" prefWidth="345.0" styleClass="bg-anchor">
+         <children>
+            <VBox layoutX="22.0" layoutY="131.0" prefHeight="265.0" prefWidth="301.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="301.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="71.0" text="Full Name  :">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="nameBorrowerFund" prefHeight="45.0" prefWidth="230.0" promptText="Full Name" styleClass="textfield" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="301.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="87.0" text="Acc Number :" />
+                        <TextField fx:id="accNumberFund" prefHeight="45.0" prefWidth="236.0" promptText="Account Number" styleClass="textfield" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="55.0" prefWidth="301.0">
+                     <children>
+                        <Button fx:id="seeDetail" mnemonicParsing="false" onAction="#showDetail" prefHeight="45.0" prefWidth="307.0" styleClass="topup-button" text="See Detail" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="22.0" layoutY="28.0" styleClass="welcome-text" text="Find the person" />
+            <Button fx:id="paymentButton" layoutX="23.0" layoutY="374.0" mnemonicParsing="false" onAction="#handlePayment" prefHeight="45.0" prefWidth="133.0" styleClass="add-button" text="Payment" />
+            <Label layoutX="23.0" layoutY="75.0" text="Type in the name and account number you want to fund" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
