@@ -139,8 +139,8 @@ public class DetailPaymentController implements Initializable{
             double profitSharingAmount = submissionData.getProfitSharingAmount();
             
             if (investorData != null) {
-                // Update balance investor dengan jumlah pembayaran penuh
-                investorData.setBalance(investorData.getBalance() + paymentAmount);
+                // Update balance investor dengan jumlah income
+                investorData.setBalance(investorData.getBalance() + profitSharingAmount);
                 
                 // Update income investor hanya dengan jumlah bagi hasil untuk pembayaran ini
                 investorData.setIncome(investorData.getIncome() + profitSharingAmount);
