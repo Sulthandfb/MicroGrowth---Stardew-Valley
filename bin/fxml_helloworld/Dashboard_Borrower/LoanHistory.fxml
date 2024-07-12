@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1080.0" styleClass="pane" stylesheets="@../../default_package/investor.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_helloworld.Dashboard_Borrower.LoanHistory">
+   <children>
+      <Label layoutX="51.0" layoutY="48.0" styleClass="welcome-text-borrower" text="Submission History">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="historySubmissionTable" layoutX="81.0" layoutY="113.0" prefHeight="306.0" prefWidth="919.0">
+        <columns>
+          <TableColumn fx:id="nameColumnHistory" prefWidth="178.0" text="Full Name" />
+          <TableColumn fx:id="npwpColumnHistory" prefWidth="184.0" text="NPWP Number" />
+            <TableColumn fx:id="phoneColumnHistory" prefWidth="184.0" text="Phone Number" />
+            <TableColumn fx:id="jobColumnHistory" prefWidth="177.0" text="Job" />
+            <TableColumn fx:id="dateColumnHistory" prefWidth="194.0" text="Date Submission" />
+        </columns>
+      </TableView>
+      <Label layoutX="81.0" layoutY="445.0" text="Wanna Update your submission?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="82.0" layoutY="499.0" prefHeight="65.0" prefWidth="316.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="89.0" text="Full Name : " />
+            <TextField fx:id="historyNameField" prefHeight="40.0" prefWidth="208.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="82.0" layoutY="564.0" prefHeight="65.0" prefWidth="316.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="89.0" text="NPWP Number :" />
+            <TextField fx:id="historyNpwpField" prefHeight="40.0" prefWidth="208.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="449.0" layoutY="499.0" prefHeight="65.0" prefWidth="333.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="116.0" text="Phone Number :" />
+            <TextField fx:id="historyPhoneField" prefHeight="40.0" prefWidth="208.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="449.0" layoutY="564.0" prefHeight="65.0" prefWidth="333.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="118.0" text="Job : " />
+            <TextField fx:id="historyJobField" prefHeight="40.0" prefWidth="208.0" />
+         </children>
+      </HBox>
+      <VBox layoutX="449.0" layoutY="662.0" prefHeight="121.0" prefWidth="333.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="73.0" text="Update ?">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="2.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="updateSubmission" mnemonicParsing="false" onAction="#updateSubmission" prefHeight="40.0" prefWidth="144.0" styleClass="add-button" text="Update Submission">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="2.0" />
+               </VBox.margin>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data submitted for evaluation will automatically change.">
+               <VBox.margin>
+                  <Insets left="2.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

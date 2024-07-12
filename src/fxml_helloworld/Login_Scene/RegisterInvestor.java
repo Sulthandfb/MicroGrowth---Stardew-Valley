@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
-import fxml_helloworld.OpenScene;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +23,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 // import untuk menangani format XML
 import com.thoughtworks.xstream.XStream;
+import javafx.scene.control.Hyperlink;
 
 public class RegisterInvestor implements Initializable{
 
@@ -44,6 +44,9 @@ public class RegisterInvestor implements Initializable{
 
     @FXML
     private Button signupButton;
+
+    @FXML
+    private Hyperlink alreadyHave;
 
     private OpenScene openScene = new OpenScene();
 
@@ -97,5 +100,10 @@ public class RegisterInvestor implements Initializable{
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void alreadyHaveAccount(ActionEvent event) {
+        openScene.openScene("/fxml_helloworld/Login_Scene/Login.fxml", alreadyHave);
     }
 }

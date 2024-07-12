@@ -115,6 +115,7 @@ public class InvestorController implements Initializable {
         investors = new ArrayList<>();
         loadUserData();
         setupTopUpButton();
+        setupCurrencyFormatters();
     }
 
     private void loadUserData() {
@@ -142,10 +143,49 @@ public class InvestorController implements Initializable {
     private void updateUI() {
         nameProfil.setText(investorData.getName());
         nameCredit.setText(investorData.getName());
-        balanceLabel.setText("Rp " + investorData.getBalance());
-        balanceLabel2.setText("Rp " + investorData.getBalance());
-        outcomeLabel.setText("Rp " + investorData.getOutcome());  // Tambahkan baris ini
-        incomeLabel.setText("Rp " + investorData.getIncome());  // Tambahkan baris ini
+        balanceLabel.setText("Rp " + formatRupiahOutput(investorData.getBalance()));
+        balanceLabel2.setText("Rp " + formatRupiahOutput(investorData.getBalance()));
+        outcomeLabel.setText("- Rp " + formatRupiahOutput(investorData.getOutcome()));
+        incomeLabel.setText("+ Rp " + formatRupiahOutput(investorData.getIncome()));
+    }
+
+    private void setupCurrencyFormatters() {
+        if (mountTopup != null) {
+            mountTopup.setTextFormatter(createCurrencyFormatter());
+        }
+    }
+
+    private TextFormatter<String> createCurrencyFormatter() {
+        return new TextFormatter<>(change -> {
+            String newText = change.getControlNewText().replaceAll("[^\\d]", "");
+            if (newText.isEmpty()) {
+                return change; // If the new text is empty, return the change as is.
+            }
+            try {
+                long value = Long.parseLong(newText);
+                change.setText(formatRupiahInput(value));
+                change.setRange(0, change.getControlText().length());
+                change.setAnchor(change.getCaretPosition());
+            } catch (NumberFormatException e) {
+                return null;
+            }
+            return change;
+        });
+    }
+
+    private String formatRupiahInput(long amount) {
+        return String.format("%,d", amount).replace(",", ".");
+    }
+
+    private String formatRupiahOutput(double amount) {
+        return String.format("%,.0f", amount);
+    }
+
+    private double parseRupiah(String amount) {
+        // Hapus semua karakter non-digit
+        String numericString = amount.replaceAll("[^\\d]", "");
+        // Parse sebagai double
+        return Double.parseDouble(numericString);
     }
 
     private void setupTopUpButton() {
@@ -196,7 +236,7 @@ public class InvestorController implements Initializable {
 
     private void processTopUp(String bank, String accountNumber, String amount, 
                         String name, String email, String pin) {
-        double topUpAmount = Double.parseDouble(amount);
+        double topUpAmount = parseRupiah(amount);
 
         if (investorData == null) {
         investorData = new InvestorData();
@@ -221,9 +261,9 @@ public class InvestorController implements Initializable {
         investorData.addTopUp(topUpAmount);
 
         saveUserData();
+        nameCredit.setText(investorData.getName());
         updateUI();
         showAlert("Top Up successful!");
-        nameCredit.setText(investorData.getName());
     }
 
     @FXML

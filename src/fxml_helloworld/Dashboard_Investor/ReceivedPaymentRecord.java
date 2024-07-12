@@ -2,6 +2,9 @@ package fxml_helloworld.Dashboard_Investor;
 
 import java.time.*;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("received-payment")
 public class ReceivedPaymentRecord {
     private double amount;
     private String payerName;

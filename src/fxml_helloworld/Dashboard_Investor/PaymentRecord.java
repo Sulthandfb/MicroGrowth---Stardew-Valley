@@ -90,6 +90,11 @@ public class PaymentRecord {
         this.paymentStatus = paymentStatus;
     }
 
-    // ... getter dan setter lainnya ...
-    
+    public boolean isCompleted() {
+        return "Completed".equals(this.paymentStatus);
+    }
+
+    public void markAsCompleted() {
+        this.paymentStatus = "Completed";
+    }
 }

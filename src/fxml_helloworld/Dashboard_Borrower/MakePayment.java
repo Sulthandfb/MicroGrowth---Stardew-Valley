@@ -150,8 +150,10 @@ public class MakePayment implements Initializable {
             xstream.addPermission(AnyTypePermission.ANY);
             xstream.processAnnotations(InvestorData.class);
             xstream.processAnnotations(ReceivedPaymentRecord.class);
+            xstream.processAnnotations(PaymentRecord.class);
             xstream.alias("investor-data", InvestorData.class);
-            xstream.alias("received-payment", ReceivedPaymentRecord.class);
+            xstream.alias("received-payment-record", ReceivedPaymentRecord.class);
+            xstream.alias("Payment-Record", PaymentRecord.class);
 
             FileInputStream fis = new FileInputStream("investorData.xml");
             investorData = (InvestorData) xstream.fromXML(fis);

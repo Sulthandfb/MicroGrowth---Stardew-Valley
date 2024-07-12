@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class DetailPaymentController implements Initializable{
     @FXML
@@ -133,19 +134,32 @@ public class DetailPaymentController implements Initializable{
             return;
         }
 
-        double paymentAmount = paymentData.getAmount();
-
         try {
-            // Proses pembayaran
-            submissionData.setRemainingLoanAmount(submissionData.getRemainingLoanAmount() - investorData.getOutcome());
+            double paymentAmount = paymentData.getAmount();
+            double profitSharingAmount = submissionData.getProfitSharingAmount();
             
             if (investorData != null) {
+                // Update balance investor dengan jumlah pembayaran penuh
                 investorData.setBalance(investorData.getBalance() + paymentAmount);
-                investorData.setIncome(investorData.getIncome() + paymentAmount);
+                
+                // Update income investor hanya dengan jumlah bagi hasil untuk pembayaran ini
+                investorData.setIncome(investorData.getIncome() + profitSharingAmount);
+    
+                // Create and add a new ReceivedPaymentRecord
+                ReceivedPaymentRecord receivedPayment = new ReceivedPaymentRecord(
+                    profitSharingAmount,  // Gunakan profitSharingForThisPayment
+                    submissionData.getName(),
+                    submissionData.getAccountNumber(),
+                    LocalDateTime.now(),
+                    investorData.getName(),
+                    investorData.getAccountNumber(),
+                    "Completed"
+                );
+                investorData.getReceivedPayments().add(receivedPayment);
             } else {
                 showAlert("Warning", "Investor data is not available. Payment processed for borrower only.");
             }
-
+    
             paymentData.setPaymentStatus("Completed");
 
             // Simpan perubahan

@@ -140,6 +140,9 @@ public class InvestorData {
     }
 
     public List<ReceivedPaymentRecord> getReceivedPayments() {
+        if (receivedPayments == null) {
+            receivedPayments = new ArrayList<>();
+        }
         return receivedPayments;
     }
 

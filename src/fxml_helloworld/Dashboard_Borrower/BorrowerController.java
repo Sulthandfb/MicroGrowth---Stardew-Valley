@@ -3,7 +3,6 @@ package fxml_helloworld.Dashboard_Borrower;
 import fxml_helloworld.*;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
-import fxml_helloworld.OpenScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import javafx.util.StringConverter;
 
 // import untuk menangani format XML
 import com.thoughtworks.xstream.XStream;
@@ -47,6 +47,9 @@ public class BorrowerController implements Initializable {
 
     @FXML
     private Button paymentPage;
+
+    @FXML
+    private Button loanHistoryPage;
 
     @FXML
     private Button borrowerLogoutButton;
@@ -110,6 +113,7 @@ public class BorrowerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         submissionData = new SubmissionData();
+        setupCurrencyFormatters();
     }
 
     @FXML
@@ -126,6 +130,44 @@ public class BorrowerController implements Initializable {
         }
     }
 
+    private void setupCurrencyFormatters() {
+        if (annualIncomeLoan != null) {
+            annualIncomeLoan.setTextFormatter(createCurrencyFormatter());
+        }
+        if (loanPlan != null) {
+            loanPlan.setTextFormatter(createCurrencyFormatter());
+        }
+    }
+
+    private TextFormatter<String> createCurrencyFormatter() {
+        return new TextFormatter<>(change -> {
+            if (change.getControlNewText().isEmpty())
+                return change;
+            try {
+                String newText = change.getControlNewText().replaceAll("[^\\d]", "");
+                long value = Long.parseLong(newText);
+                change.setText(formatRupiahInput(value));
+                change.setRange(0, change.getControlText().length());
+                change.setAnchor(change.getCaretPosition());
+            } catch (NumberFormatException e) {
+                return null;
+            }
+            return change;
+        });
+    }
+
+    private String formatRupiahInput(long amount) {
+        return String.format("%,d", amount).replace(",", ".");
+    }
+
+    private String formatRupiahOutput(double amount) {
+        return String.format("Rp %,.0f", amount);
+    }
+
+    private long parseRupiah(String formattedAmount) {
+        return Long.parseLong(formattedAmount.replaceAll("[^\\d]", ""));
+    }
+
     @FXML
     private void processLoanApplication(ActionEvent event) {
         // Gather data from form fields
@@ -140,8 +182,8 @@ public class BorrowerController implements Initializable {
         submissionData.setBusinessType(typeLoan.getText());
         submissionData.setJob(jobLoan.getText());
         submissionData.setSector(sectorLoan.getText());
-        submissionData.setAnnualIncome(Double.parseDouble(annualIncomeLoan.getText()));
-        submissionData.setLoanPlan(Double.parseDouble(loanPlan.getText()));
+        submissionData.setAnnualIncome(parseRupiah(annualIncomeLoan.getText()));
+        submissionData.setLoanPlan(parseRupiah(loanPlan.getText()));
 
         // Open Loan Detail popup
         try {
@@ -261,10 +303,16 @@ public class BorrowerController implements Initializable {
         Pane halaman = object.getPane("/fxml_helloworld/Dashboard_Borrower/MakePayment.fxml");
         borrowerSideBar.setCenter(halaman);
     }
+
+    @FXML
+    private void keLoanHistory(ActionEvent event) {
+        OpenScene object = new OpenScene();
+        Pane halaman = object.getPane("/fxml_helloworld/Dashboard_Borrower/LoanHistory.fxml");
+        borrowerSideBar.setCenter(halaman);
+    }
     
     @FXML
     private void logoutButton(ActionEvent event) {
         openScene.openScene("/fxml_helloworld/Login_Scene/Login.fxml", borrowerLogoutButton);
     }
-
 }
